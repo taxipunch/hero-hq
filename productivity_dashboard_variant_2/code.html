@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Productivity Dashboard Variant 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#7C7CFE",
+              "background-light": "#F4F4F5",
+              "background-dark": "#0F0F0F",
+              "accent-purple": "#6366F1",
+              "accent-yellow": "#FACC15",
+              "accent-teal": "#2DD4BF",
+              "accent-red": "#FB7185",
+              "card-dark": "#1C1C1E",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "24px",
+              "xl": "32px",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      body {
+        font-family: 'Space Grotesk', sans-serif;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .wavy-path {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: draw 2s ease-out forwards;
+      }
+      @keyframes draw {
+        to { stroke-dashoffset: 0; }
+      }
+      .glass-effect {
+        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.1);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen pb-24">
+<div class="h-12 w-full"></div>
+<header class="px-6 py-4 flex items-center justify-between sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-accent-yellow flex items-center justify-center overflow-hidden border-2 border-white dark:border-zinc-800">
+<img alt="User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaEXe_goW7AQJQJAQmWgPW6WoKVAQjDWfy1wTApCNADHVvRL_6ApwCEHqBICBeFQ0P_LVzECsJ9nOzHF9x_0obF90NDFsHIkEwRohLbYO9h4m8sAo5keZ2phBswc4yNHO1LoIHqlEKbPjUlOoi8slIV2BF7fS_2e-UDyFRTL5Du_06blsojRS6kFYrdxUV2-iMR_X6DOMQb8kM8ArsU0XqDfkGGzoTmmYq3RtlA9oviNZinVnEnmd48yoiNtpOu9MtNdZv6wQjxstZ"/>
+</div>
+<div>
+<p class="text-xs text-slate-500 dark:text-zinc-400 font-medium uppercase tracking-wider">Good Morning</p>
+<h1 class="text-xl font-bold">Hanna! 👋</h1>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-white dark:bg-zinc-800 flex items-center justify-center shadow-sm">
+<span class="material-icons-round text-xl">search</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-white dark:bg-zinc-800 flex items-center justify-center shadow-sm relative">
+<span class="material-icons-round text-xl">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-accent-red rounded-full"></span>
+</button>
+</div>
+</header>
+<main class="px-6 space-y-4">
+<section class="bg-accent-purple rounded-xl p-6 text-white relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h2 class="text-2xl font-bold uppercase tracking-tight">Daily Flow</h2>
+<p class="text-indigo-100 opacity-80 text-sm">Peak productivity window starts in 15m</p>
+</div>
+<button class="bg-white/20 hover:bg-white/30 p-2 rounded-full transition-colors">
+<span class="material-icons-round">north_east</span>
+</button>
+</div>
+<div class="flex items-end justify-between gap-1 h-32 mb-2">
+<div class="w-full bg-white/20 rounded-t-lg h-[40%]"></div>
+<div class="w-full bg-white/40 rounded-t-lg h-[60%]"></div>
+<div class="w-full bg-white rounded-t-lg h-[90%] relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-accent-purple text-[10px] font-bold py-1 px-2 rounded">NOW</div>
+</div>
+<div class="w-full bg-white/40 rounded-t-lg h-[75%]"></div>
+<div class="w-full bg-white/20 rounded-t-lg h-[50%]"></div>
+<div class="w-full bg-white/10 rounded-t-lg h-[30%]"></div>
+<div class="w-full bg-white/10 rounded-t-lg h-[20%]"></div>
+</div>
+<div class="flex justify-between text-[10px] font-medium text-indigo-100/60 uppercase">
+<span>08:00</span>
+<span>10:00</span>
+<span>12:00</span>
+<span>14:00</span>
+<span>16:00</span>
+</div>
+</div>
+<img alt="Decorative element" class="absolute -right-8 -bottom-8 w-32 opacity-20 rotate-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO3RpCLZQM9MtzSu09Pmr9HVNEywXoOirPldoIi4VusbdWFlMWzbypmXLOTgYgbMHMHpSuAlUjzR14j8S15DDI0IDaZm9UP_YPRRL27dfKqKu9SmMPHlphcLWc0nk5smKMGPkmcoDVGFTBq5CbychQFVGCgV_dSjWjODJ9RcFir3YB_sT15OhN24FXGsAUGYbpRmHOEyQba7B9HRLWGnTW773Ye9LBC5fCzWt9VG8NXjVHB9ShAkI6_jo9C9gWg6wltr1Atf_gtC_D"/>
+</section>
+<div class="grid grid-cols-2 gap-4">
+<section class="bg-accent-yellow rounded-xl p-5 flex flex-col justify-between h-64 relative overflow-hidden">
+<div>
+<div class="flex justify-between items-center mb-1">
+<span class="material-icons-round text-slate-900 bg-white/40 rounded-lg p-1 text-lg">bolt</span>
+<span class="text-[10px] font-bold bg-black/10 px-2 py-0.5 rounded-full">+12%</span>
+</div>
+<h3 class="text-slate-900 font-bold text-lg leading-tight uppercase">Energy<br/>Levels</h3>
+</div>
+<div class="relative h-24">
+<svg class="w-full h-full" viewBox="0 0 100 40">
+<path class="wavy-path opacity-20" d="M0 30 Q 25 10, 50 30 T 100 20" fill="none" stroke="black" stroke-width="3"></path>
+<path class="wavy-path" d="M0 35 Q 25 15, 50 35 T 100 25" fill="none" stroke="black" stroke-width="4"></path>
+</svg>
+<div class="absolute bottom-0 left-0">
+<span class="text-3xl font-black text-slate-900">84%</span>
+</div>
+</div>
+</section>
+<section class="bg-accent-teal rounded-xl p-5 flex flex-col justify-between h-64 relative overflow-hidden">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-slate-900 font-bold text-lg uppercase leading-tight">Goal<br/>Status</h3>
+<p class="text-teal-900/60 text-[10px] font-medium mt-1 uppercase">Main Objective</p>
+</div>
+<button class="bg-black/10 p-1.5 rounded-full">
+<span class="material-icons-round text-sm">settings</span>
+</button>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-white/40 flex items-center justify-center">
+<img alt="Target icon" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzlwEdl4vw2Wg8A4wMGrKlGqWBd0wrQxBiaI8aNXDGYp9BHG5qb9E3cE4sZIAQCuj6cxBKEw7JVzm6yt0xwFgBde2Ao8OG1iC3lWHLkyPGmwlL6gxUg4cscJTgzKVk-2dB0yMGwpG9HmgE0f85POudLRqmqMAvi3onRoRMlPy2K1VanMN1Nk9lDGIUKbvK_hmdXLkRu3x3aZFWdkWqkMY8aPe82XAn2UCMFQyiFhlnXCXg5I47BidNNES678cXCPg-1RHuDk_wVwGp"/>
+</div>
+<div class="flex-1">
+<div class="h-1.5 w-full bg-teal-900/10 rounded-full overflow-hidden">
+<div class="h-full bg-teal-900 w-3/4 rounded-full"></div>
+</div>
+</div>
+</div>
+<p class="text-teal-900 font-bold text-sm">Focus Session<br/><span class="text-xs font-medium opacity-60 italic">3/4 completed</span></p>
+</div>
+</section>
+</div>
+<section class="bg-card-dark rounded-xl p-6 text-white border border-zinc-800">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-bold uppercase tracking-tight">Daily Coach</h3>
+<span class="material-icons-round text-zinc-500">more_horiz</span>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-accent-purple to-accent-teal flex items-center justify-center overflow-hidden shrink-0">
+<img alt="Coach AI" class="w-10 h-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNIhaLfjiQ2Fh38ODpFk5Kc3cKsz88VQJuBxzFcIvLr1cgQmblskvEwFY8BEHZw-Il4ndUty1_QqIBbMo0X8Rf0SJONb6kQ2uXMfPAb_g3ahywpCnoGuG-JFOfbPEWH3AWBhmFerXjQ8nmcwIuzeeg4KmzIg3rg5oBSn4fLgE7tQHwIF_Uba8GBOn-r_D07SDYqeJ-wQ1teV7VU6_iP2_zlBfZW9LUj2FUYxdpPGjPaj6MJIDwTzCjSrh-6e6_JqpRysuMxENrowdg"/>
+</div>
+<div class="bg-zinc-800/50 rounded-2xl p-4 flex-1">
+<p class="text-sm leading-relaxed text-zinc-300">
+                        Hi Hanna! You've been crushing your 
+                        <span class="text-accent-yellow font-bold">Focus Sessions</span> 
+                        this week. Energy levels are peaking. Should we schedule the 
+                        <span class="text-accent-teal font-bold">Deep Work</span> block for 11:00 AM?
+                    </p>
+</div>
+</div>
+<div class="mt-4 flex flex-wrap gap-2">
+<button class="bg-accent-teal/20 text-accent-teal text-xs font-bold py-2 px-4 rounded-full border border-accent-teal/30">
+                    Yes, schedule it
+                </button>
+<button class="bg-zinc-800 text-zinc-400 text-xs font-bold py-2 px-4 rounded-full">
+                    Maybe later
+                </button>
+</div>
+</section>
+<section class="bg-white dark:bg-zinc-900 rounded-xl p-6 flex items-center justify-between border border-zinc-200 dark:border-zinc-800">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-accent-red/10 rounded-2xl flex items-center justify-center overflow-hidden">
+<img alt="Creative Character" class="w-14 h-14" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnM6LW_GUsscze7odsch8Itpl_aKE62SLX3tLZ7MtdEijo_PKNaV_kAsguePtei_4mXdQedR_J7umdgsH1l7XnjOtUto0cWLTAQT1FuC2rDLC5FDqFbFNVnrw1zmWZ7YqD0Q23yFw4etMUfAxk3_Cw5b1v8ET30P-IBkJZnVUFp1_rPXST6_vGBdc4UkRDu4ab9GVgRY5_dbRvV6-TwqfMKY8qoOLiRzP-WaMl87iaaLrqvyaZ9Y84Uq4SAsrAqGRyqCbVvSkND6Xh"/>
+</div>
+<div>
+<h4 class="font-bold text-lg uppercase">Creative Block</h4>
+<p class="text-xs text-slate-500 dark:text-zinc-500 font-medium uppercase tracking-widest">2 Projects Pending</p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-slate-100 dark:bg-zinc-800 flex items-center justify-center">
+<span class="material-icons-round">arrow_forward_ios</span>
+</button>
+</section>
+</main>
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] glass-effect rounded-full px-6 py-3 flex items-center justify-between z-50 shadow-2xl border border-white/10">
+<button class="p-2 text-primary">
+<span class="material-icons-round text-2xl">grid_view</span>
+</button>
+<button class="p-2 text-zinc-400">
+<span class="material-icons-round text-2xl">insert_chart</span>
+</button>
+<button class="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg -mt-10 border-4 border-background-dark">
+<span class="material-icons-round text-3xl">add</span>
+</button>
+<button class="p-2 text-zinc-400">
+<span class="material-icons-round text-2xl">layers</span>
+</button>
+<button class="p-2 text-zinc-400">
+<span class="material-icons-round text-2xl">person</span>
+</button>
+</nav>
+<div class="fixed top-[-10%] left-[-10%] w-64 h-64 bg-accent-purple/10 blur-[100px] rounded-full -z-10"></div>
+<div class="fixed bottom-[-10%] right-[-10%] w-64 h-64 bg-accent-teal/10 blur-[100px] rounded-full -z-10"></div>
+
+</body></html>

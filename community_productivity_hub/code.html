@@ -1,0 +1,202 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#a60df2",
+            "background-light": "#f7f5f8",
+            "background-dark": "#1c1022",
+          },
+          fontFamily: {
+            "display": ["Spline Sans"]
+          },
+          borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Spline Sans', sans-serif;
+    }
+    .masonry-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .card-span-2 {
+      grid-column: span 2;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden pb-20">
+<!-- Header -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 backdrop-blur-md bg-opacity-80">
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-extrabold leading-tight tracking-tight flex-1 text-center">Community Hub</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex size-12 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</div>
+<!-- Tabs -->
+<div class="pb-3 px-4">
+<div class="flex border-b border-slate-200 dark:border-primary/20 gap-8 overflow-x-auto no-scrollbar">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary text-primary pb-3 pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold tracking-wide">Featured</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold tracking-wide">Challenges</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold tracking-wide">Library</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold tracking-wide">Connect</p>
+</a>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="p-4 masonry-grid">
+<!-- Live Coworking Session Card (Bright Blue) -->
+<div class="card-span-2 flex flex-col items-stretch justify-start rounded-xl shadow-lg bg-blue-500 border-4 border-slate-900 dark:border-white/10 overflow-hidden">
+<div class="p-5 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<span class="bg-white/20 text-white text-[10px] font-black px-2 py-1 rounded-full uppercase tracking-widest">Live Now</span>
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full border-2 border-blue-500 bg-slate-200 overflow-hidden" data-alt="User avatar 1">
+<img alt="avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7X_mtZY6i9-0S4JBNLPV9tHSX0I5oZCqH0lsrSmJNQnvxHh_SnoEguFZUQihOU4z8y60SrRea_cWeXtzwgrkNIJIjOV5nv9xPSh7U271NEUZvCxweUHuQti9ki79s_6aOuaXcN04N1KwwQuNZvClh0O1V-atINZZPdaIgAX9sywKb-Ss9I89F4n_s2oyma91RULbsXBfohOVsGnThXiy5HW97L9v0PFqQn3YpBmF4z6pQxXCInS9Qc7ZpTmKhp7NFcNgMt0wmMArf"/>
+</div>
+<div class="size-8 rounded-full border-2 border-blue-500 bg-slate-200 overflow-hidden" data-alt="User avatar 2">
+<img alt="avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYMPJvG7WifqPk0nLur3bOvgi1EF9YzueH9-4pF_7fzNwi5WjeH9uRdLfTkJ83jQnmH8-gtADJZbu9H1igJ07ouAupk2nMiabMVva8ZBO3XpphCSnfMjWTNiUBRRYIoB5wP9u8sFsZ72UVDajTJXQAnOlqTCA5Hpc1zcDSZQhgaF-vMPjuLw3_0r2VucBLafXfXQDRLZ2d296aPaIJCnqQMWRZm8Y9TK-2lp_qgXHL2a0Z9AmeNDK8UT-O6tdS1Wsy7rfh0Tdy6BaP"/>
+</div>
+<div class="size-8 rounded-full border-2 border-blue-500 bg-slate-200 overflow-hidden" data-alt="User avatar 3">
+<img alt="avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb3goyWVkmQVnJTYVlYYxjlBgNCQ79iMw5pIn56d3tvakUKdHjgwmXqXSQsqS2gx7QV517G5UDO0oV23eu1hQi1NdwCeqvMR8JCmzgqzdSRhsibhMdonlwm122Pf8Bqk5NzJksTwLtHys1Zr1vu7soui7FMp-Dx-IfP1wj8ra0VK83aEEYr73Bz0tWOuEVrLqbZK0TBDjERSvCthqdMaECf669GmgUTVeP4bs6aXv7edgd2XhpX2IG64_Wi2ns_1Y5dUmiRWmnolki"/>
+</div>
+<div class="size-8 rounded-full border-2 border-blue-500 bg-white/30 flex items-center justify-center text-[10px] font-bold text-white">
+                +21
+              </div>
+</div>
+</div>
+<div>
+<h3 class="text-white text-2xl font-black leading-tight">Morning Deep Work Session</h3>
+<p class="text-white/80 text-sm font-medium mt-1">Join 24 others in the focus room</p>
+</div>
+<button class="w-full py-3 bg-white text-blue-600 rounded-lg font-bold text-sm uppercase tracking-wider shadow-md active:scale-95 transition-transform">
+            Join Session
+          </button>
+</div>
+</div>
+<!-- Weekly Challenge (Neon Green) -->
+<div class="flex flex-col rounded-xl shadow-lg bg-[#b6ff1c] border-4 border-slate-900 dark:border-white/10 overflow-hidden min-h-[220px]">
+<div class="p-4 flex flex-col h-full justify-between">
+<div>
+<div class="size-10 bg-black/10 rounded-lg flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-slate-900 font-bold">trophy</span>
+</div>
+<h3 class="text-slate-900 text-lg font-black leading-tight">Weekly Challenge</h3>
+<p class="text-slate-800 text-xs font-bold opacity-70 mt-1">42h Focused</p>
+</div>
+<div class="mt-4">
+<div class="flex items-center gap-2 mb-2">
+<div class="size-6 rounded-full bg-slate-900/20" data-alt="Top user avatar">
+<img alt="Sarah" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL4_JmJ0grR_S-z57iIhqm2Kaa2_UWFH3XkULDbJUME2q1AA1l8S60YG5NNuRUMVT_otPrukP_JuNUwiK293JNRblXrH9rcCaUq5CdsnMBs5OY7iUCSxcY68e3Jo81NqedIor6RjzIsksUe5jYsSWwo8Bp14yAXBYvr2V2XJK57bG0YG4DtKbw8sICitOX3qDRNA7_-n5OyUC11VFTzma7NjZoJ95reWSPsGjlPKJN-Pacg2647MlsxX5xblQxhmFT55TC1wzEmVnX"/>
+</div>
+<p class="text-[10px] font-black text-slate-900">Sarah M.</p>
+</div>
+<button class="w-full py-2 bg-slate-900 text-[#b6ff1c] rounded-lg font-bold text-[10px] uppercase tracking-wider">
+              Stats
+            </button>
+</div>
+</div>
+</div>
+<!-- Resource Library (Deep Orange) -->
+<div class="flex flex-col rounded-xl shadow-lg bg-[#ff6b35] border-4 border-slate-900 dark:border-white/10 overflow-hidden min-h-[220px]">
+<div class="p-4 flex flex-col h-full justify-between text-white">
+<div>
+<div class="size-10 bg-white/20 rounded-lg flex items-center justify-center mb-3">
+<span class="material-symbols-outlined font-bold">auto_stories</span>
+</div>
+<h3 class="text-white text-lg font-black leading-tight">Resource Library</h3>
+<p class="text-white/80 text-xs font-bold mt-1">24 New Guides</p>
+</div>
+<div class="mt-4 flex flex-col gap-2">
+<div class="h-1 bg-white/30 rounded-full w-full">
+<div class="h-full bg-white rounded-full w-2/3"></div>
+</div>
+<button class="w-full py-2 bg-white text-[#ff6b35] rounded-lg font-bold text-[10px] uppercase tracking-wider">
+              Browse
+            </button>
+</div>
+</div>
+</div>
+<!-- New Discussion Card (Subtle/Dark) -->
+<div class="card-span-2 flex flex-col items-stretch justify-start rounded-xl shadow-lg bg-primary/10 border-4 border-primary/40 dark:border-primary/30 overflow-hidden">
+<div class="p-5">
+<div class="flex gap-4 items-center mb-4">
+<div class="size-12 rounded-full border-2 border-primary bg-slate-200 overflow-hidden" data-alt="Discussion author">
+<img alt="author" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCThqgPPbQQlCROmYeNCdO7wqdQqvBCvu-rTA34Hd0SxlHvUH4u1M2CluCOG2SstwipUdmjVPBrRzqzGChma2GPclDGC8wPeKmk5W1tBAIRVks2tJCcgFeod1ukbRFhlSo1xcInlAH2GDHCWaVuk8itHFQZufrEgZR9fQG9QeCIqN1fkLO5ddm7ift_iPKQNgkUFssHvvGdoECgXXdWINwbcrWmS-h_IZx9qFtTv0YhHS-gSI70pdSUrhE0BKYWTmscalINAp7NW9xx"/>
+</div>
+<div>
+<p class="text-sm font-black text-primary">James Wilson</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Just shared a new workflow</p>
+</div>
+</div>
+<p class="text-slate-700 dark:text-slate-200 font-bold text-base italic leading-relaxed">
+            "The 50/10 split changed my entire morning routine. Anyone else tried it?"
+          </p>
+<div class="flex gap-4 mt-4 text-primary font-black text-xs">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">favorite</span> 128</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">chat_bubble</span> 34</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-50">
+<div class="flex gap-2 border-t border-slate-200 dark:border-primary/20 bg-background-light dark:bg-background-dark px-4 pb-6 pt-2 shadow-2xl">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 dark:text-slate-500" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">dashboard</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-wider">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">group</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-wider">Hub</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 dark:text-slate-500" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">timer</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-wider">Focus</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 dark:text-slate-500" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">person</span>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-wider">Profile</p>
+</a>
+</div>
+</div>
+</div>
+</body></html>

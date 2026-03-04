@@ -1,0 +1,149 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#FF6B00", // High-saturation Orange
+            "neon-green": "#39FF14", // Vibrant Neon Green
+            "obsidian": "#050505", // Deep Obsidian Black
+            "background-dark": "#000000",
+          },
+          fontFamily: {
+            "display": ["Spline Sans", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.75rem", "lg": "1.5rem", "xl": "2.5rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style type="text/tailwindcss">
+    :root {
+      --primary-orange: #FF6B00;
+      --neon-green: #39FF14;
+    }
+    body {
+      font-family: 'Spline Sans', sans-serif;
+      background-color: #000000;
+    }
+    .mind-map-grid {
+      background-image: 
+        linear-gradient(to right, rgba(57, 255, 20, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(57, 255, 20, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .node-shadow-orange {
+      box-shadow: 0 0 40px rgba(255, 107, 0, 0.3);
+    }
+    .node-shadow-green {
+      box-shadow: 0 0 30px rgba(57, 255, 20, 0.15);
+    }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-obsidian font-display text-slate-100 antialiased overflow-hidden h-screen flex flex-col">
+<header class="flex items-center justify-between px-6 pt-12 pb-4 bg-obsidian/80 backdrop-blur-md z-30 border-b border-white/5">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded-full bg-white/10">
+<span class="material-symbols-outlined text-2xl text-white">arrow_back</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-white">AI Mind Map</h1>
+</div>
+<div class="flex gap-2">
+<div class="p-2 rounded-full bg-white/10">
+<span class="material-symbols-outlined text-2xl text-white">share</span>
+</div>
+<div class="p-2 rounded-full bg-white/10">
+<span class="material-symbols-outlined text-2xl text-white">more_vert</span>
+</div>
+</div>
+</header>
+<main class="flex-1 relative overflow-hidden mind-map-grid">
+<svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#39FF14" stroke-width="4" x1="50%" x2="20%" y1="50%" y2="25%"></line>
+<line stroke="#39FF14" stroke-width="4" x1="50%" x2="80%" y2="25%"></line>
+<line stroke="#39FF14" stroke-width="4" x1="50%" x2="80%" y1="50%" y2="75%"></line>
+<line stroke="#39FF14" stroke-width="4" x1="50%" x2="20%" y1="50%" y2="75%"></line>
+</svg>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="w-44 h-44 rounded-full bg-primary node-shadow-orange flex flex-col items-center justify-center p-6 text-center border-4 border-obsidian">
+<span class="material-symbols-outlined text-obsidian text-3xl mb-2 font-bold">rocket_launch</span>
+<h2 class="text-obsidian text-lg font-black leading-tight uppercase tracking-tight">Main Project Goal</h2>
+</div>
+</div>
+<div class="absolute top-[20%] left-[5%] z-10">
+<div class="w-40 bg-neon-green rounded-xl node-shadow-green border-2 border-obsidian flex items-center p-3 gap-3">
+<div class="bg-obsidian/10 p-1.5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-obsidian text-xl font-bold">search</span>
+</div>
+<p class="text-obsidian font-bold text-xs leading-tight uppercase tracking-wider">UX Research</p>
+</div>
+</div>
+<div class="absolute top-[20%] right-[5%] z-10">
+<div class="w-40 bg-neon-green rounded-xl node-shadow-green border-2 border-obsidian flex items-center p-3 gap-3">
+<div class="bg-obsidian/10 p-1.5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-obsidian text-xl font-bold">draw</span>
+</div>
+<p class="text-obsidian font-bold text-xs leading-tight uppercase tracking-wider">Brand Identity</p>
+</div>
+</div>
+<div class="absolute bottom-[20%] right-[5%] z-10">
+<div class="w-40 bg-neon-green rounded-xl node-shadow-green border-2 border-obsidian flex items-center p-3 gap-3">
+<div class="bg-obsidian/10 p-1.5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-obsidian text-xl font-bold">terminal</span>
+</div>
+<p class="text-obsidian font-bold text-xs leading-tight uppercase tracking-wider">Dev Sprint</p>
+</div>
+</div>
+<div class="absolute bottom-[20%] left-[5%] z-10">
+<div class="w-40 bg-neon-green rounded-xl node-shadow-green border-2 border-obsidian flex items-center p-3 gap-3">
+<div class="bg-obsidian/10 p-1.5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-obsidian text-xl font-bold">campaign</span>
+</div>
+<p class="text-obsidian font-bold text-xs leading-tight uppercase tracking-wider">Marketing</p>
+</div>
+</div>
+<div class="absolute bottom-8 right-8 z-40">
+<button class="w-16 h-16 bg-white rounded-full border-[4px] border-obsidian flex items-center justify-center shadow-2xl active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-obsidian text-4xl font-bold">add</span>
+</button>
+</div>
+<div class="absolute bottom-8 left-8 z-40 flex flex-col gap-2">
+<button class="w-10 h-10 bg-white/10 backdrop-blur-md rounded-lg border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">zoom_in</span>
+</button>
+<button class="w-10 h-10 bg-white/10 backdrop-blur-md rounded-lg border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">zoom_out</span>
+</button>
+</div>
+</main>
+<nav class="bg-obsidian border-t border-white/10 px-6 py-4 flex items-center justify-between z-30">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">hub</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Canvas</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Insights</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">schedule</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Timeline</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Tools</span>
+</a>
+</nav>
+
+</body></html>

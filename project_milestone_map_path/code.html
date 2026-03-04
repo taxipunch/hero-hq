@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Milestone Map: Dark Orange &amp; Green Edition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "obsidian": "#050505",
+                        "neon-green": "#39FF14",
+                        "punchy-orange": "#FF4500",
+                        "charcoal": "#1A1A1A",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .neon-glow-green {
+                filter: drop-shadow(0 0 10px rgba(57, 255, 20, 0.6));
+            }
+            .orange-glow {
+                box-shadow: 0 0 25px rgba(255, 69, 0, 0.5);
+            }
+            .obsidian-bg {
+                background-color: #050505;
+            }
+        }
+        .snake-path-container {
+            background-image: radial-gradient(circle at 2px 2px, rgba(57, 255, 20, 0.03) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-obsidian font-display text-white antialiased">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-[430px] mx-auto border-x border-white/5">
+<header class="flex items-center bg-obsidian p-6 pb-4 justify-between z-20">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-2xl text-neon-green">arrow_back</span>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-tight flex-1 text-center">Project Milestones</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex size-10 items-center justify-center rounded-full bg-charcoal border border-neon-green/30 text-neon-green">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto px-6 py-10 snake-path-container relative">
+<div class="absolute inset-0 pointer-events-none px-6 py-10">
+<svg class="w-full h-[150%]" fill="none" preserveAspectRatio="none" viewBox="0 0 100 800">
+<path class="neon-glow-green" d="M25 60 Q 85 160 25 260 Q 85 360 25 460" stroke="#39FF14" stroke-linecap="round" stroke-width="8"></path>
+<path d="M25 460 Q 85 560 25 660 Q 85 760 25 860" opacity="0.4" stroke="#39FF14" stroke-dasharray="10 10" stroke-width="3"></path>
+</svg>
+</div>
+<div class="relative flex flex-col gap-32">
+<div class="flex items-center gap-6 group">
+<div class="relative z-10">
+<div class="size-16 rounded-full bg-punchy-orange border-4 border-obsidian orange-glow flex items-center justify-center">
+<span class="material-symbols-outlined text-obsidian font-black text-3xl">check</span>
+</div>
+</div>
+<div class="flex-1 bg-charcoal border-l-4 border-punchy-orange p-5 rounded-2xl shadow-2xl">
+<span class="text-xs font-black uppercase tracking-[0.2em] text-punchy-orange mb-2 block">Phase 01</span>
+<h3 class="text-2xl font-bold leading-none text-white">Strategy Deck</h3>
+<p class="text-xs text-neon-green mt-3 font-bold">COMPLETED OCT 12</p>
+</div>
+</div>
+<div class="flex flex-row-reverse items-center gap-6">
+<div class="relative z-10">
+<div class="size-16 rounded-full bg-punchy-orange border-4 border-obsidian orange-glow flex items-center justify-center">
+<span class="material-symbols-outlined text-obsidian font-black text-3xl">check</span>
+</div>
+</div>
+<div class="flex-1 bg-charcoal border-r-4 border-punchy-orange p-5 rounded-2xl shadow-2xl text-right">
+<span class="text-xs font-black uppercase tracking-[0.2em] text-punchy-orange mb-2 block">Phase 02</span>
+<h3 class="text-2xl font-bold leading-none text-white">Market Analysis</h3>
+<p class="text-xs text-neon-green mt-3 font-bold">COMPLETED NOV 05</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative z-10">
+<div class="size-16 rounded-full bg-punchy-orange border-4 border-obsidian orange-glow flex items-center justify-center">
+<span class="material-symbols-outlined text-obsidian font-black text-3xl">bolt</span>
+</div>
+</div>
+<div class="flex-1 bg-charcoal border-l-4 border-neon-green p-5 rounded-2xl shadow-2xl ring-1 ring-white/10">
+<span class="text-xs font-black uppercase tracking-[0.2em] text-neon-green mb-2 block">In Progress</span>
+<h3 class="text-2xl font-bold leading-none text-white">Core UX Design</h3>
+<div class="mt-4 h-2 w-full bg-black/50 rounded-full overflow-hidden border border-white/5">
+<div class="h-full bg-neon-green w-3/4 shadow-[0_0_8px_#39FF14]"></div>
+</div>
+</div>
+</div>
+<div class="flex flex-row-reverse items-center gap-6">
+<div class="relative z-10">
+<div class="size-16 rounded-full bg-obsidian border-2 border-neon-green/40 flex items-center justify-center">
+<div class="size-3 rounded-full bg-neon-green/20"></div>
+</div>
+</div>
+<div class="flex-1 bg-charcoal/50 border border-white/5 p-5 rounded-2xl opacity-60">
+<span class="text-xs font-black uppercase tracking-[0.2em] text-gray-500 mb-2 block">Phase 04</span>
+<h3 class="text-2xl font-bold leading-none text-gray-400">Beta Launch</h3>
+<p class="text-xs text-gray-600 mt-3 font-bold uppercase">Locked</p>
+</div>
+</div>
+<div class="mt-4">
+<div class="flex flex-col items-stretch justify-start rounded-3xl bg-charcoal border border-white/10 overflow-hidden shadow-2xl">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover relative" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvdtWB-feur2iFu0hlahyZl4EJqZT-eqvpgGri6Ocj2PZVeeQfwB8FDnVCKGJGm19KVRhJFw106O7ZwS_8wHwynJggGMQZn1wl_is70qJsNseMGPowWwHUG7slIvaTw8hwPyVQzELbURuqWcWiwFHVJndmHwzJYkZc3vC3okU7oENiHV2zPw0p6dtpk1A5q0GxyXmo6YmbmsT9gIc5NSLZhDBNmJfKUAVoPrl3drIieB73dl_jr1LP2TfyunEH0wBu4xSZduELEqzJ");'>
+<div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
+</div>
+<div class="p-8">
+<p class="text-neon-green text-xs font-black uppercase tracking-widest mb-2">Detailed view</p>
+<h4 class="text-white text-3xl font-bold leading-tight mb-4">Launch Strategy</h4>
+<p class="text-gray-400 text-base leading-relaxed mb-8">Establish key performance indicators for the primary production deployment. Target: 1k DAU.</p>
+<button class="w-full h-14 bg-neon-green text-obsidian font-black rounded-2xl text-lg uppercase tracking-tighter shadow-[0_0_20px_rgba(57,255,20,0.3)]">
+                                View Full Roadmap
+                            </button>
+</div>
+</div>
+</div>
+<div class="h-32"></div>
+</div>
+</main>
+<nav class="flex gap-2 border-t border-white/5 bg-obsidian/95 backdrop-blur-xl px-6 pb-10 pt-4 shrink-0 z-30">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-gray-600" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<p class="text-[10px] font-black uppercase tracking-widest">Dash</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-neon-green" href="#">
+<span class="material-symbols-outlined fill-1">insights</span>
+<p class="text-[10px] font-black uppercase tracking-widest">Map</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-gray-600" href="#">
+<span class="material-symbols-outlined">data_exploration</span>
+<p class="text-[10px] font-black uppercase tracking-widest">Ops</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-gray-600" href="#">
+<span class="material-symbols-outlined">settings_account_box</span>
+<p class="text-[10px] font-black uppercase tracking-widest">Pro</p>
+</a>
+</nav>
+</div>
+
+</body></html>

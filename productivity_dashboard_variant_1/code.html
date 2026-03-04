@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Productivity Dashboard Variant 1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF6B57", // Coral Red from Revenue card
+                        "background-light": "#F4F4F4",
+                        "background-dark": "#1A1C1E",
+                        "card-dark": "#25282B",
+                        "card-blue": "#B5E4E4",
+                        "card-sage": "#CCD5AE",
+                        "card-purple": "#7B89F4",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "24px",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .card-shadow { box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen pb-24">
+<div class="h-12 w-full"></div>
+<header class="px-6 flex justify-between items-center mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">
+<span class="material-icons-round">bolt</span>
+</div>
+<div>
+<p class="text-xs opacity-60 font-semibold uppercase tracking-wider">Good morning</p>
+<h1 class="text-xl font-extrabold tracking-tight">Hanna's Dashboard</h1>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-white dark:bg-card-dark flex items-center justify-center border border-slate-200 dark:border-slate-800">
+<span class="material-icons-round text-lg">search</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-white dark:bg-card-dark flex items-center justify-center border border-slate-200 dark:border-slate-800 relative">
+<span class="material-icons-round text-lg text-primary">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full ring-2 ring-white dark:ring-card-dark"></span>
+</button>
+</div>
+</header>
+<main class="px-4 space-y-4">
+<section class="bg-primary p-6 rounded-[32px] text-white overflow-hidden relative card-shadow">
+<div class="flex justify-between items-start mb-6">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-icons-round text-sm">schedule</span>
+<h2 class="text-xs font-bold uppercase tracking-widest opacity-90">Focus Time</h2>
+</div>
+<p class="text-3xl font-extrabold tracking-tight">4h 42m</p>
+</div>
+<div class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
+<span class="text-[10px] font-bold">+12%</span>
+<span class="material-icons-round text-xs">trending_up</span>
+</div>
+</div>
+<div class="flex items-end justify-between h-24 gap-2 px-1">
+<div class="flex-1 bg-white/30 rounded-t-lg h-[40%]"></div>
+<div class="flex-1 bg-white/30 rounded-t-lg h-[60%]"></div>
+<div class="flex-1 bg-white/30 rounded-t-lg h-[35%]"></div>
+<div class="flex-1 bg-white rounded-t-lg h-[95%] relative">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg">1:15h</div>
+</div>
+<div class="flex-1 bg-white/30 rounded-t-lg h-[50%]"></div>
+<div class="flex-1 bg-white/30 rounded-t-lg h-[70%]"></div>
+<div class="flex-1 bg-white/30 rounded-t-lg h-[45%]"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] font-bold opacity-70 uppercase tracking-tighter">
+<span>Mon</span><span>Tue</span><span>Wed</span><span class="text-white opacity-100">Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</section>
+<div class="grid grid-cols-2 gap-4">
+<section class="bg-card-blue dark:bg-card-blue p-5 rounded-[32px] text-slate-900 card-shadow h-64 flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h2 class="text-xs font-black uppercase tracking-widest">Tasks</h2>
+<span class="material-icons-round text-lg">open_in_new</span>
+</div>
+<div class="flex-1 relative mt-4 overflow-hidden rounded-2xl bg-white/40">
+<img alt="Minimalist city map background" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZSo4s1lLfSClMPlZN8i_3eJncq78jSYOQ-7Mo2vPmcA_V-YnEKAkSt06gGdoskUqG6MSEyCV6oxJijWgqwq-1la1aJKB1xgEzIIQQaC9ZjZf5BKQkTX5UeleiRmHGIllj6eWB9Z7zw_ppEJHrqshJeuaVQ4Ep-O4hFI9evXEQk4MjoQMfH63e86OtnCHFJtPkLD0f1jnu3YKtqF1wHsH0ycQUIrOQrVmRoZZTg98UOnipPiBFQ79GIxcUz55X6edXEZCWwAaNAB-B"/>
+<div class="absolute inset-0 flex flex-col justify-end p-3">
+<div class="bg-white/90 backdrop-blur-sm p-2 rounded-xl shadow-sm border border-white/50">
+<p class="text-[10px] font-black leading-none mb-1">PRODUCTIVITY HUB</p>
+<p class="text-[10px] opacity-70">3 tasks pending</p>
+</div>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<span class="material-icons-round text-primary text-xl">location_on</span>
+</div>
+</div>
+</section>
+<section class="bg-card-sage dark:bg-card-sage p-5 rounded-[32px] text-slate-900 card-shadow h-64 flex flex-col">
+<div class="flex justify-between items-start mb-2">
+<h2 class="text-xs font-black uppercase tracking-widest">Timing</h2>
+<span class="material-icons-round text-lg">arrow_outward</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center relative">
+<svg class="w-32 h-32 transform -rotate-90">
+<circle cx="64" cy="64" fill="transparent" r="50" stroke="rgba(255,255,255,0.4)" stroke-width="12"></circle>
+<circle cx="64" cy="64" fill="transparent" r="50" stroke="#FF6B57" stroke-dasharray="314" stroke-dashoffset="100" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-black">72%</span>
+<span class="text-[9px] font-bold uppercase opacity-60">Complete</span>
+</div>
+</div>
+<div class="flex justify-between items-center mt-3 bg-white/30 rounded-full px-3 py-1.5">
+<div class="flex items-center gap-1">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="text-[10px] font-bold">Peak</span>
+</div>
+<span class="text-[10px] font-mono font-bold">12:47:33</span>
+</div>
+</section>
+</div>
+<section class="bg-card-dark p-6 rounded-[32px] text-white overflow-hidden relative card-shadow border border-slate-800">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-xs font-black uppercase tracking-[0.2em]">AI Operations Lead</h2>
+<button class="bg-slate-800 p-2 rounded-full">
+<span class="material-icons-round text-sm">more_horiz</span>
+</button>
+</div>
+<div class="flex gap-4 mb-6">
+<div class="w-12 h-12 rounded-full border-2 border-card-purple p-0.5 overflow-hidden flex-shrink-0">
+<img alt="AI Coach Persona" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm7gnlGpE4RMKIUnFDZKWdlPTG2FKfpLjW7UIXtp2vSsWQk7JGUKj6C2KtH46t4mgmuXkvDLi_ggmmT5eF_gnXuV3FSOjArXTPopaVeBPCmDXsdvchmaSoeM-3o9WI2GARVhRzjX8dxfNeTwVi6fRMvGYIRtKgsi7TqcV0HdxC0fn68Y655Ds9_7auAGBrqr1rAO_ZHQnMeaUUa_PCejyccsnnB_UAUpUuYCoGVeD5EZBny3BNEyr5NGH3Qz6Jk53MhXwg5JCOgYwK"/>
+</div>
+<div class="space-y-3">
+<div class="bg-slate-800/80 backdrop-blur rounded-2xl rounded-tl-none p-4 text-sm leading-relaxed border border-slate-700">
+                        Hi, Hanna. Your deep-work sessions are <span class="text-card-purple font-bold underline">peaking</span> between 9am - 11am. Let's block your calendar for tomorrow?
+                    </div>
+<div class="flex flex-wrap gap-2">
+<button class="bg-white text-black text-[11px] font-bold px-4 py-2 rounded-full flex items-center gap-2 border border-slate-200">
+<span class="material-icons-round text-xs">event_available</span> Yes, schedule
+                        </button>
+<button class="bg-slate-800 text-white text-[11px] font-bold px-4 py-2 rounded-full flex items-center gap-2 border border-slate-700">
+<span class="material-icons-round text-xs">auto_graph</span> View stats
+                        </button>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute left-4 top-1/2 -translate-y-1/2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+<span class="material-icons-round text-sm">add</span>
+</div>
+</div>
+<input class="w-full bg-slate-800 border-none rounded-full py-4 pl-14 pr-12 text-sm placeholder:text-slate-500 focus:ring-1 focus:ring-primary/50" placeholder="Ask something or choose to start..." type="text"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2">
+<span class="material-icons-round text-slate-400">graphic_eq</span>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm bg-black/90 dark:bg-white/10 backdrop-blur-xl border border-white/10 rounded-[40px] px-6 py-4 flex justify-between items-center z-50 card-shadow">
+<button class="w-12 h-12 rounded-2xl bg-card-blue flex items-center justify-center text-black">
+<span class="material-icons-round">grid_view</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+<span class="material-icons-round">show_chart</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+<span class="material-icons-round">work_outline</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+<span class="material-icons-round">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwuDxr_a2hgbvORJMx02ErBypsh01sG8STICBMKHExmo5pnpQpHF-696qlQboyxz2LgVm05WSo08sz3DZ9Pce3NC__OzZqQigjVMB55oov5zGjEgB9krjPnxD0dHuoKc759AvU8f_x6gqLVnWJnQtX9XNOeT8dTnpmx-fuW8VqwfmySBged43MSHWRb1c8W2aBos3FEOq06gMa231wStv7a4jan5MOADyXaVeFNVCCdup2uNzs8wqlrd7CsMZEfLoiD1cIFra7eDLM"/>
+</div>
+</nav>
+
+</body></html>
