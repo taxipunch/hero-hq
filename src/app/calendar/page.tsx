@@ -13,7 +13,7 @@ export default async function CalendarPage() {
         .order('scheduled_at', { ascending: true });
 
     return (
-        <div className="min-h-screen bg-[#0d0d0d] text-white p-4 md:p-8 lg:p-12 font-['Inter']">
+        <div className="min-h-screen bg-black text-white p-4 md:p-8 lg:p-12 font-display">
             {/* Navigation */}
             <nav className="mb-8">
                 <Link href="/" className="inline-flex items-center text-gray-500 hover:text-white transition-colors text-sm">
@@ -27,8 +27,8 @@ export default async function CalendarPage() {
                     <CalendarIcon size={28} className="text-blue-500" />
                 </div>
                 <div>
-                    <h1 className="text-4xl font-bold tracking-tight text-white mb-1">Calendar</h1>
-                    <p className="text-gray-400">Upcoming appointments and time-blocked engagements.</p>
+                    <h1 className="text-4xl font-black tracking-tighter uppercase text-white mb-1">Calendar</h1>
+                    <p className="text-gray-400 font-medium">Upcoming appointments and time-blocked engagements.</p>
                 </div>
             </header>
 
@@ -83,9 +83,9 @@ export default async function CalendarPage() {
                 ) : (
                     <div className="text-center py-24 border border-dashed border-[#333] rounded-3xl">
                         <CalendarIcon size={48} className="mx-auto text-gray-600 mb-4 opacity-50" />
-                        <h3 className="text-xl font-medium text-gray-400 mb-2">No Upcoming Engagements</h3>
-                        <p className="text-gray-500 max-w-sm mx-auto">
-                            The future is unwritten. Await dispatch.
+                        <h3 className="text-xl font-black uppercase tracking-widest text-gray-400 mb-2">No Engagements</h3>
+                        <p className="text-gray-500 max-w-sm mx-auto font-medium">
+                            Await dispatch.
                         </p>
                     </div>
                 )}

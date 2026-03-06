@@ -1,60 +1,33 @@
-# Hero HQ Task Plan
+# Hero HQ Task Plan - Phase 2 (Conversion)
 
-## Phases & Goals
+This blueprint governs the conversion of the baseline Hero HQ framework into an active, personality-rich system that captures ideas and turns them into skills and well-framed task-based projects.
 
-### Phase 1: Supabase Setup
-- [ ] Scaffold all tables (captures, appointments, tasks, ideas, idea_notes, projects, project_findings, project_progress, playbooks, playbook_steps, playbook_findings, playbook_progress, debriefs)
-- [ ] Set up `crazy_status` enum
-- [ ] Create relationships (foreign keys)
-- [ ] Create views: `portfolio`, `attention_allocation`
-- [ ] Enable RLS on all tables using `auth.uid() = user_id`
-- [ ] Set up Edge Functions scaffolding (`crazy-launcher`, `pocket-parse`, `today-brief`)
-- [ ] Setup Debrief Trigger (Postgres function and trigger on `projects` and `playbooks`)
-*Goal*: No frontend until database confirmed working.
+## B.L.A.S.T. Blueprint
 
-### Phase 2: Auth
-- [ ] Google OAuth via Supabase setup
-- [ ] Session handling in Next.js middleware
-*Goal*: Single user authenticated.
+### Phase 1: B - Blueprint (Vision & Logic)
+- [x] Initialized Project Memory (`task_plan.md`, `findings.md`, `progress.md`)
+- [x] Documented Discovery Questions in `findings.md`
+- [x] Initialized `claude.md` as the Project Constitution
+- [ ] Establish JSON Data Schemas in `gemini.md` / `claude.md` for the Payload (Input/Output shapes)
 
-### Phase 3: Today Page and Home Cards
-- [ ] Scaffold Next.js App Router project
-- [ ] Build UI for Today page (six cards in 2-column grid)
-- [ ] Wire up data reads only (confirm query layer works)
-*Goal*: Confirm query layer works before building input flows.
+### Phase 2: L - Link (Connectivity)
+- [ ] Verify Supabase DB connection
+- [ ] Verify Edge Function connectivity and `.env.local` keys
+- [ ] Build minimal verification scripts in `tools/` to confirm connections are alive
 
-### Phase 4: Capture Pipeline
-- [ ] Pocket webhook integration
-- [ ] Edge Function: `pocket-parse`
-- [ ] Claude API integration for parse
-- [ ] Supabase insert routing logic
-*Goal*: The heartbeat of the system.
+### Phase 3: A - Architect (The 3-Layer Build)
+- [ ] **Layer 1 (Architecture)**: Write technical SOPs in `architecture/` for Idea Capture Routing, Promotion Engine, and Playbook Formulation.
+- [ ] **Layer 2 (Navigation)**: Build typescript Edge Functions as the reasoning layer.
+- [ ] **Layer 3 (Tools)**: Build deterministic Python scripts in `tools/` for automated testing.
 
-### Phase 5: CRAZY Launcher
-- [ ] Full screen takeover UI (five-question modal)
-- [ ] Edge Function: `crazy-launcher`
-- [ ] Claude API generation (four documents)
-- [ ] Supabase insert and status flip to 'activated'
+### Phase 4: S - Stylize (Refinement & UI)
+- [ ] Refine the Dashboard UI (Next.js layout, mobile-first) using Stitch MCP for design guidance.
+- [ ] Implement UI for processing Ideas, Projects, and Playbooks with the "Fight Club" aliveness aesthetic.
+- [ ] Confirm layout responses on different screen sizes.
 
-### Phase 6: Debrief Intercept
-- [ ] Phase completion trigger
-- [ ] Full screen takeover modal (Debrief UI)
-- [ ] Findings insert and status progression to 'debriefing' then back/forward
+### Phase 5: T - Trigger (Deployment)
+- [ ] Move logic to Vercel/Supabase production environment.
+- [ ] Configure execution triggers (Pocket -> Edge Function logic).
+- [ ] Finalize the Maintenance Log.
 
-### Phase 7: Remaining Pages
-- [ ] Projects (`/projects/[id]` - four-tab layout, collapsed constitution banner)
-- [ ] Backlog
-- [ ] Calendar
-- [ ] Playbooks
-- [ ] Portfolio (`/portfolio` - The Yawp Archive)
-
-### Phase 8: Stylize
-- [ ] Match UI design spec precisely (Stitch HTML pages)
-- [ ] Animations, color language, typography
-*Goal*: Tyler Durden / Fight Club aesthetic ("not optimization, aliveness")
-
-### Phase 9: Deploy
-- [ ] Vercel deployment
-- [ ] Configure production environment variables
-- [ ] Production Supabase project
-- [ ] Domain setup
+*Note: The original scaffolding phases are completed and logged in `PLAN.md`.*

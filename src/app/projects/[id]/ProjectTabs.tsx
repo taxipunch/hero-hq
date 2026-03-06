@@ -23,19 +23,24 @@ export default function ProjectTabs({ plan, findings, progress }: ProjectTabsPro
     return (
         <div className="mt-8">
             {/* Custom Select/Tabs Area */}
-            <div className="flex bg-slate-200 dark:bg-slate-800/50 p-1 rounded-2xl mb-8">
-                {tabs.map((tab) => (
-                    <button
-                        key={tab.id}
-                        onClick={() => setActiveTab(tab.id as Tab)}
-                        className={`flex-1 py-2.5 px-4 rounded-xl text-sm font-bold transition-all ${activeTab === tab.id
+            <div className="flex justify-between items-center bg-slate-200 dark:bg-slate-800/50 p-1 rounded-2xl mb-8">
+                <div className="flex flex-1">
+                    {tabs.map((tab) => (
+                        <button
+                            key={tab.id}
+                            onClick={() => setActiveTab(tab.id as Tab)}
+                            className={`flex-[0.5] py-2.5 px-4 rounded-xl text-sm font-bold transition-all ${activeTab === tab.id
                                 ? 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-sm'
                                 : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'
-                            }`}
-                    >
-                        {tab.label}
-                    </button>
-                ))}
+                                }`}
+                        >
+                            {tab.label}
+                        </button>
+                    ))}
+                </div>
+                <button className="flex items-center gap-1.5 px-4 text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors opacity-50 hover:opacity-100">
+                    Edit
+                </button>
             </div>
 
             <div className="space-y-4">

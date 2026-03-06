@@ -55,7 +55,7 @@ export default async function PortfolioPage() {
     ].sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
     return (
-        <div className="min-h-screen bg-[#0d0d0d] text-white p-4 md:p-8 lg:p-12 font-['Inter']">
+        <div className="min-h-screen bg-black text-white p-4 md:p-8 lg:p-12 font-display">
 
             {/* Navigation */}
             <nav className="mb-8">
@@ -70,8 +70,8 @@ export default async function PortfolioPage() {
                     <Archive size={28} className="text-purple-500" />
                 </div>
                 <div>
-                    <h1 className="text-4xl font-bold tracking-tight text-white mb-1">The Yawp Archive</h1>
-                    <p className="text-gray-400">Portfolio of completed, fully-actualized endeavors.</p>
+                    <h1 className="text-4xl font-black tracking-tighter uppercase text-white mb-1">The Yawp Archive</h1>
+                    <p className="text-gray-400 font-medium">Portfolio of completed, fully-actualized endeavors.</p>
                 </div>
             </header>
 
@@ -115,9 +115,9 @@ export default async function PortfolioPage() {
                 ) : (
                     <div className="text-center py-24 border border-dashed border-[#333] rounded-3xl">
                         <Archive size={48} className="mx-auto text-gray-600 mb-4 opacity-50" />
-                        <h3 className="text-xl font-medium text-gray-400 mb-2">The Archive is Empty</h3>
-                        <p className="text-gray-500 max-w-sm mx-auto">
-                            No projects or tasks have achieved the ultimate "Yawped" state yet. Get back in the arena.
+                        <h3 className="text-xl font-black uppercase tracking-widest text-gray-400 mb-2">The Archive is Empty</h3>
+                        <p className="text-gray-500 max-w-sm mx-auto font-medium">
+                            Get back in the arena.
                         </p>
                     </div>
                 )}

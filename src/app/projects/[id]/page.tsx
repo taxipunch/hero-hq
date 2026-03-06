@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, MoreHorizontal, Zap, Target } from 'lucide-react';
 import Link from 'next/link';
 import ProjectTabs from './ProjectTabs';
+import ProjectActions from '@/app/components/ProjectActions';
 
 export default async function ProjectDetailPage({ params }: { params: { id: string } }) {
     const supabase = await createClient();
@@ -33,7 +34,7 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
         .order('created_at', { ascending: false });
 
     return (
-        <div className="relative flex min-h-screen max-w-md mx-auto flex-col bg-background-light dark:bg-background-dark overflow-hidden lg:border-x lg:border-primary/10 font-display pb-24">
+        <div className="relative flex min-h-screen max-w-md mx-auto flex-col bg-black text-white overflow-hidden lg:border-x lg:border-primary/10 font-display pb-24">
 
             {/* Header Navigation */}
             <div className="flex items-center justify-between px-6 pt-12 pb-4">
@@ -64,20 +65,12 @@ export default async function ProjectDetailPage({ params }: { params: { id: stri
                         <p className="text-sm text-white/80 leading-relaxed max-w-[90%]">{project.description}</p>
 
                         {/* Quick Actions */}
-                        <div className="mt-6 flex gap-3">
-                            {project.crazy_status === 'unlaunched' && (
-                                <button className="flex-1 bg-white text-primary hover:bg-slate-100 transition-colors py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 text-sm shadow-lg shadow-black/10">
-                                    <Zap size={16} />
-                                    Initialize
-                                </button>
-                            )}
-                            {project.crazy_status === 'running' && (
-                                <button className="flex-1 bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 text-white transition-colors py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 text-sm shadow-lg shadow-black/10">
-                                    <Target size={16} />
-                                    Debrief
-                                </button>
-                            )}
-                        </div>
+                        <ProjectActions
+                            itemId={project.id}
+                            itemType="project"
+                            crazyStatus={project.crazy_status}
+                            currentPhase={project.current_phase}
+                        />
                     </div>
                 </div>
 

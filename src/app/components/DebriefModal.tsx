@@ -11,6 +11,7 @@ export default function DebriefModal({
     entityType,
     phaseCompleted,
     itemName,
+    debriefId,
 }: {
     isOpen: boolean;
     onClose: () => void;
@@ -18,6 +19,7 @@ export default function DebriefModal({
     entityType: string;
     phaseCompleted: string;
     itemName: string;
+    debriefId?: string;
 }) {
     const [response, setResponse] = useState('');
     const [loading, setLoading] = useState(false);
@@ -31,21 +33,32 @@ export default function DebriefModal({
             const { data: { user } } = await supabase.auth.getUser();
             if (!user) throw new Error('Unauthenticated');
 
-            // Update the debrief record that was created by the Postgres trigger
-            const { error } = await supabase
-                .from('debriefs')
-                .update({
-                    response: skipped ? null : response,
-                    source: skipped ? 'skipped' : 'typed',
-                    skipped,
-                })
-                .eq('item_id', entityId)
-                .eq('phase_completed', phaseCompleted)
-                .is('response', null)
-                .order('created_at', { ascending: false })
-                .limit(1);
+            if (debriefId) {
+                const { error: dErr } = await supabase
+                    .from('debriefs')
+                    .update({
+                        response: skipped ? null : response,
+                        source: skipped ? 'skipped' : 'typed',
+                        skipped,
+                    })
+                    .eq('id', debriefId);
+                if (dErr) throw dErr;
+            } else {
+                const { error } = await supabase
+                    .from('debriefs')
+                    .update({
+                        response: skipped ? null : response,
+                        source: skipped ? 'skipped' : 'typed',
+                        skipped,
+                    })
+                    .eq('item_id', entityId)
+                    .eq('phase_completed', phaseCompleted)
+                    .is('response', null)
+                    .order('created_at', { ascending: false })
+                    .limit(1);
 
-            if (error) throw error;
+                if (error) throw error;
+            }
 
             // Extract insights to finding tables (simple insert for now)
             if (!skipped && response.trim() !== '') {
@@ -62,8 +75,14 @@ export default function DebriefModal({
                 });
             }
 
-            onClose(); // In a real flow, this would progress the state machine back to "running"
+            // Revert crazy_status to 'running'
+            const entityTable = entityType === 'project' ? 'projects' : 'playbooks';
+            await supabase.from(entityTable).update({
+                crazy_status: 'running',
+            }).eq('id', entityId);
 
+            // Refresh page to clear the modal and hit the DB securely
+            window.location.reload();
         } catch (error) {
             console.error(error);
             alert('Failed to submit debrief.');

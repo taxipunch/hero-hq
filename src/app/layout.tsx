@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
+import { QuoteProvider } from './components/QuoteProvider';
+
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
@@ -15,9 +17,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="dark bg-background-dark">
-            <body className={`${inter.variable} bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-display`}>
-                {children}
+        <html lang="en" className="dark bg-black">
+            <body className={`${inter.variable} bg-black text-white antialiased font-display`}>
+                <QuoteProvider>
+                    {children}
+                </QuoteProvider>
             </body>
         </html>
     );

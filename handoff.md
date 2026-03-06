@@ -4,34 +4,28 @@
 Hero HQ is a personal dashboard for a single user, styled with a "Fight Club / Aliveness" aesthetic (the B.L.A.S.T. framework). It uses Next.js App Router and Supabase as the backend. The core mechanic is the "CRAZY Launcher," a system that walks the user through a deliberate activation process for tasks, projects, appointments, and playbooks, turning them into portfolio pieces.
 
 ## Master Roadmap & Milestones
-- [x] **Protocol 0**: Initialize Memory & Stop (Created `gemini.md`, `task_plan.md`, `findings.md`, `progress.md`, `PLAN.md`)
-- [x] **Phase 1**: Supabase Setup (Created 13 tables, Enums, Views, RLS, Edge Function stubs, Postgres trigger `trigger_debrief`)
-- [x] **Phase 2**: Authentication (Configured Google OAuth and Next.js middleware)
-- [x] **Phase 3**: Base App UI (Initialized Next.js project, implemented read-only Today page `/page.tsx`)
-- [x] **Phase 4**: Capture Pipeline (Created `pocket-parse` Edge Function to route transcripts via Claude API)
-- [x] **Phase 5**: CRAZY Launcher (Created `crazy-launcher` Edge Function and `CrazyModal.tsx` UI)
-- [x] **Phase 6**: Debrief Intercept (Created `today-brief` Edge Function and `DebriefModal.tsx` UI)
-- [ ] **Phase 7**: Remaining Pages (Projects Detail pages, Portfolio/Yawp Archive, Backlog, Calendar, Playbooks)
-- [ ] **Phase 8**: Stylize (Implement Stitch HTML designs, polish animations/typography)
-- [ ] **Phase 9**: Deploy (Vercel deploy, environment variables config)
+- [x] **Protocol 0**: Initialize Memory & Stop (Created project memory files and established A.N.T architecture context)
+- [x] **Phase 1**: Initial Setup & Architecture (Supabase schema, Google OAuth, Base UI Scaffold)
+- [x] **Phase 2**: B.L.A.S.T. Prompts Implementation (AI Integration & Core Interactions)
+  - [x] **Prompt 1**: Relabel and Rewire Dashboard Cards (Today, Projects, Ideas, Calendar)
+  - [x] **Prompt 2**: Tyler Durden Oracle Widget (On-load briefings, Next Action inference)
+  - [x] **Prompt 3**: CRAZY Launcher API Integration (Generate Constitution, Phase Initialization via Next.js API Routes)
+  - [x] **Prompt 4**: Capture Input Flow (Full-screen capture modal, AI Routing to tables, Review Card)
+  - [x] **Prompt 5**: Debrief Trigger (Sit-in-the-car modal on 'debriefing' status, hooked to `ProjectActions.tsx`)
+- [ ] **Phase 3**: Stylize, Finalize, and Polish (Awaiting user documents)
 
 ## Current Stage & Trajectory
-**Current Phase:** Phase 7: Remaining Pages (Projects & Portfolio)
+**Current Phase:** Transitioning to **Phase 3** (Stylize & Finalize)
 
-**State of Phase 7 (The Handoff Point):**
-We are just starting Phase 7. The goal is to build the UI for the remaining pages, primarily:
-1.  **Projects Detail Page (`/projects/[id]`)**: A four-tab layout (Plan, Findings, Progress, Constitution) with a collapsed constitution banner and a prominent CRAZY button if unlaunched.
-2.  **Portfolio Page (`/portfolio`)**: The Yawp Archive showing everything that has been yawped, sorted by date.
-3.  **Other Views**: Backlog, Calendar, and Playbooks.
+**State of Completion (The Handoff Point):**
+All five of the Phase 2 B.L.A.S.T. prompts have been successfully implemented, tested, and pushed to GitHub. The project's Next.js API routes now handle the heavy lifting of routing captures, initializing CRAZY constitutions, and logging debriefs. The UI components (`CaptureModal`, `CrazyModal`, `DebriefModal`, `OracleWidget`) have all been wired into the main dashboard and project detail pages. 
 
-### Known Issues & Roadblocks to Address Immediately in New Context:
-1.  **TypeScript & Next.js Configuration**: The previous agent got stuck trying to resolve TypeScript module import errors. Specifically:
-    -   The Next.js project was initialized with `--no-import-alias`, but the code written uses the `@/utils/...` alias. The `tsconfig.json` needs to be updated with `"paths": { "@/*": ["./src/*"] }` to resolve these errors.
-    -   The Supabase Edge Functions (in `supabase/functions/`) use Deno and `jsr:` imports. These are causing TypeScript errors in the Next.js context. The `supabase` directory needs to be added to the `"exclude"` array in `tsconfig.json` to prevent Next.js from trying to compile them.
-2.  **File Creation Approach**: Avoid using terminal commands like `mkdir` with dynamic route brackets (e.g., `[id]`) in PowerShell, as it causes syntax conflicts and hangs the agent. Use direct file writing tools instead.
+### Recent Technical Highlights:
+1. **API Routes:** All Claude interactions successfully migrated from Supabase Edge Functions to Next.js API routes (`/api/crazy`, `/api/capture`, `/api/capture/confirm`, `/api/oracle`, `/api/debrief/trigger`).
+2. **Postgres Integration:** The API routes securely read/write to Supabase via `@supabase/supabase-js` using standard schema rules and service roles where necessary.
+3. **Environment Security:** `ANTHROPIC_API_KEY` is safely stored in `.env.local` and properly git-ignored.
+4. **Vercel Deployment:** The codebase is successfully deploying to Vercel (Next.js Framework Preset). 
 
-## Key Files to Review
--   `c:\antigravity-herohq\gemini.md`: The Project Constitution containing the data schema and behavioral rules.
--   `c:\antigravity-herohq\PLAN.md`: The Master Ledger and squad status.
--   `c:\antigravity-herohq\findings.md`: Architectural constraints and resolved issues.
--   `c:\antigravity-herohq\task_plan.md`: The detailed checklist for the 9-phase build.
+## Next Steps for the User
+1. Supply the Phase 3 prompt documents or Master Ledger updates.
+2. Review the UI components in the integrated browser to ensure they meet the aesthetic bar before moving into the final Stylize phase.

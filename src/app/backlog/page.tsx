@@ -25,7 +25,7 @@ export default async function BacklogPage() {
     ].sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
     return (
-        <div className="min-h-screen bg-[#0d0d0d] text-white p-4 md:p-8 lg:p-12 font-['Inter']">
+        <div className="min-h-screen bg-black text-white p-4 md:p-8 lg:p-12 font-display">
             {/* Navigation */}
             <nav className="mb-8">
                 <Link href="/" className="inline-flex items-center text-gray-500 hover:text-white transition-colors text-sm">
@@ -39,8 +39,8 @@ export default async function BacklogPage() {
                     <Inbox size={28} className="text-green-500" />
                 </div>
                 <div>
-                    <h1 className="text-4xl font-bold tracking-tight text-white mb-1">Backlog</h1>
-                    <p className="text-gray-400">Captured but unactivated potential.</p>
+                    <h1 className="text-4xl font-black tracking-tighter uppercase text-white mb-1">Backlog</h1>
+                    <p className="text-gray-400 font-medium">Captured but unactivated potential.</p>
                 </div>
             </header>
 
@@ -74,9 +74,9 @@ export default async function BacklogPage() {
                 ) : (
                     <div className="text-center py-24 border border-dashed border-[#333] rounded-3xl">
                         <ListTodo size={48} className="mx-auto text-gray-600 mb-4 opacity-50" />
-                        <h3 className="text-xl font-medium text-gray-400 mb-2">Inbox Zero</h3>
-                        <p className="text-gray-500 max-w-sm mx-auto">
-                            No unactivated items. The capture buffer is clear.
+                        <h3 className="text-xl font-black uppercase tracking-widest text-gray-400 mb-2">Blank Slate</h3>
+                        <p className="text-gray-500 max-w-sm mx-auto font-medium">
+                            The capture buffer is clear.
                         </p>
                     </div>
                 )}

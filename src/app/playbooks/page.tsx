@@ -11,7 +11,7 @@ export default async function PlaybooksPage() {
         .order('title', { ascending: true });
 
     return (
-        <div className="min-h-screen bg-[#0d0d0d] text-white p-4 md:p-8 lg:p-12 font-['Inter']">
+        <div className="min-h-screen bg-black text-white p-4 md:p-8 lg:p-12 font-display">
             {/* Navigation */}
             <nav className="mb-8">
                 <Link href="/" className="inline-flex items-center text-gray-500 hover:text-white transition-colors text-sm">
@@ -26,11 +26,11 @@ export default async function PlaybooksPage() {
                         <BookOpen size={28} className="text-orange-500" />
                     </div>
                     <div>
-                        <h1 className="text-4xl font-bold tracking-tight text-white mb-1">Playbooks</h1>
-                        <p className="text-gray-400">Standard operating procedures for recurring processes.</p>
+                        <h1 className="text-4xl font-black tracking-tighter uppercase text-white mb-1">Playbooks</h1>
+                        <p className="text-gray-400 font-medium">Standard operating procedures for recurring processes.</p>
                     </div>
                 </div>
-                <button className="bg-[#1a1a1a] border border-[#333] hover:border-[#444] text-white transition-colors px-6 py-3 rounded-xl font-medium text-sm">
+                <button className="bg-[#111] border border-[#333] hover:border-[#555] text-white transition-colors px-6 py-3 rounded-xl font-black uppercase tracking-widest text-sm">
                     + New Playbook
                 </button>
             </header>
@@ -67,9 +67,9 @@ export default async function PlaybooksPage() {
                 ) : (
                     <div className="col-span-full py-24 text-center border border-dashed border-[#333] rounded-3xl">
                         <BookOpen size={48} className="mx-auto text-gray-600 mb-4 opacity-50" />
-                        <h3 className="text-xl font-medium text-gray-400 mb-2">No Playbooks Found</h3>
-                        <p className="text-gray-500 max-w-sm mx-auto">
-                            Systematic operations begin when you document the repeatable.
+                        <h3 className="text-xl font-black uppercase tracking-widest text-gray-400 mb-2">No System</h3>
+                        <p className="text-gray-500 max-w-sm mx-auto font-medium">
+                            Document the repeatable.
                         </p>
                     </div>
                 )}

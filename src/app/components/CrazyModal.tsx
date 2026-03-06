@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { createClient } from '@/utils/supabase/client';
+import { useRouter } from 'next/navigation';
 import { X, ArrowRight, Check } from 'lucide-react';
 
 const QUESTIONS = [
@@ -41,7 +41,8 @@ export default function CrazyModal({
     const [step, setStep] = useState(0);
     const [answers, setAnswers] = useState(['', '', '', '', '']);
     const [loading, setLoading] = useState(false);
-    const supabase = createClient();
+    const [errorMsg, setErrorMsg] = useState<string | null>(null);
+    const router = useRouter();
 
     if (!isOpen) return null;
 
@@ -50,33 +51,31 @@ export default function CrazyModal({
             setStep((prev) => prev + 1);
         } else {
             setLoading(true);
-
-            const { data: session } = await supabase.auth.getSession();
+            setErrorMsg(null);
 
             try {
-                const response = await fetch(
-                    `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/crazy-launcher`,
-                    {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            Authorization: `Bearer ${session.session?.access_token}`,
-                        },
-                        body: JSON.stringify({
-                            entity_type: entityType,
-                            entity_id: entityId,
-                            answers: answers,
-                        }),
-                    }
-                );
+                const response = await fetch('/api/crazy', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        entity_type: entityType,
+                        entity_id: entityId,
+                        answers: answers,
+                    }),
+                });
 
-                if (!response.ok) throw new Error('Failed to launch');
+                const data = await response.json();
 
-                // Refresh page or trigger callback upon success
-                window.location.reload();
-            } catch (error) {
+                if (!response.ok || data.error) {
+                    throw new Error(data.error || 'The system went down. Tyler is displeased. Try again.');
+                }
+
+                const routeSlug = entityType === 'project' ? 'projects' : 'playbooks';
+                router.push(`/${routeSlug}/${entityId}`);
+                onClose();
+            } catch (error: any) {
                 console.error(error);
-                alert('Failed to execute CRAZY launch. See console.');
+                setErrorMsg(error.message || 'The system rejected your weakness. Try again.');
                 setLoading(false);
             }
         }
@@ -133,7 +132,10 @@ export default function CrazyModal({
                         className="w-full h-64 bg-transparent border-b-2 border-[#333] focus:border-[#135bec] resize-none outline-none text-2xl leading-relaxed placeholder:text-gray-700 transition-colors"
                     />
 
-                    <div className="flex justify-end pt-4">
+                    <div className="flex justify-between items-center pt-4">
+                        <div className="text-red-500 text-sm font-bold flex-1 pr-4">
+                            {errorMsg && <span>{errorMsg}</span>}
+                        </div>
                         <button
                             onClick={handleNext}
                             disabled={answers[step].trim().length === 0}
