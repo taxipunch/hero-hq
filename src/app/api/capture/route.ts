@@ -87,7 +87,7 @@ export async function POST(req: Request) {
         }
 
         // 2. Save raw capture first (now with user_id)
-        const { data: captureData, error: captureError } = await supabaseAdmin
+        const { data: captureData, error: captureError } = await supabase
             .from('captures')
             .insert({
                 user_id: user.id,
@@ -150,7 +150,7 @@ export async function POST(req: Request) {
         }
 
         if (table && routedData) {
-            const { error: routeError } = await supabaseAdmin
+            const { error: routeError } = await supabase
                 .from(table)
                 .insert(routedData);
 
@@ -160,7 +160,7 @@ export async function POST(req: Request) {
             }
 
             // Auto-resolve capture if successfully routed
-            await supabaseAdmin
+            await supabase
                 .from('captures')
                 .update({ resolved_at: new Date().toISOString() })
                 .eq('id', captureId);

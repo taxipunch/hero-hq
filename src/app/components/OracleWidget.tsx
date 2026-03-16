@@ -84,10 +84,12 @@ export function OracleWidget({
                 setBriefing(data.text);
                 setHistory(data.history || []);
             } else {
-                setBriefing("The system went down. That happens. Try again.");
+                console.error("Oracle Initial Load Error:", data);
+                setBriefing(data.error || "The system went down. That happens. Try again.");
             }
-        } catch (e) {
-            setBriefing("The system went down. That happens. Try again.");
+        } catch (e: any) {
+            console.error("Oracle Initial Load Exception:", e);
+            setBriefing(`The system went down. Exception: ${e.message}`);
         } finally {
             setIsLoading(false);
         }
@@ -114,10 +116,12 @@ export function OracleWidget({
                 setBriefing(`Capture successful. Routed to <span class="text-red-500 font-black">${route}</span>.<br/><br/><span class="opacity-70 text-xs">${summary}</span>`);
                 setHistory(prev => [...prev, { role: 'user', content: "[Raw Transcript Inserted]" }, { role: 'assistant', content: `Routed to ${route}.` }]);
             } else {
-                setBriefing("The capture pipeline failed. Check your payload.");
+                console.error("Capture Follow Up Error:", data);
+                setBriefing(data.error || "The capture pipeline failed. Check your payload.");
             }
-        } catch (e) {
-            setBriefing("The capture pipeline crashed. Tyler is displeased.");
+        } catch (e: any) {
+            console.error("Capture Follow Up Exception:", e);
+            setBriefing(`The capture pipeline crashed. Exception: ${e.message}`);
         } finally {
             setIsLoading(false);
         }
